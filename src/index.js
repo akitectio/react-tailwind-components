@@ -1,6 +1,2 @@
-import React from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
+export { };
 
-import * as Pages from './pages'
-
-export { Pages }
