@@ -27,6 +27,9 @@ jobs:
           npm install
           npm run build-storybook
 
+      - name: List build outputs
+        run: ls -l ./public
+
       - name: Deploy 🚀
         uses: actions/deploy-pages@v1
         with:
