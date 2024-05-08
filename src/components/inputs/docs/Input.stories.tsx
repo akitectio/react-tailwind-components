@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryFn } from '@storybook/react'
 import { Field, Form, Formik } from 'formik'
 import React from 'react'
 import * as Yup from 'yup'
@@ -16,14 +16,11 @@ const meta: Meta<typeof Input> = {
 
 export default meta
 
-type InputStory = StoryObj<InputProps>
-
-// Define validation schema with Yup
 const validationSchema = Yup.object({
   email: Yup.string().email('Invalid email address').required('Required')
 })
 
-export const Default: InputStory = (args: InputProps) => (
+const Template: StoryFn<InputProps> = (args: InputProps) => (
   <Formik
     initialValues={{ email: '', age: '' }}
     validationSchema={validationSchema}
@@ -38,9 +35,18 @@ export const Default: InputStory = (args: InputProps) => (
   </Formik>
 )
 
+export const Default = Template.bind({})
+
 Default.args = {
   label: 'Email',
   placeholder: 'Enter your email'
+}
+
+export const Disabled = Template.bind({})
+Disabled.args = {
+  label: 'Email',
+  placeholder: 'Enter your email',
+  disabled: true
 }
 
 Default.storyName = 'Default'

@@ -12,6 +12,8 @@ interface InputProps extends BaseInputProps {
   groupClassName?: string
   labelClassName?: string
   inputClassName?: string
+  disabled?: boolean
+  disabledColor?: string
 }
 
 const Input: React.FC<InputProps> = ({
@@ -22,6 +24,8 @@ const Input: React.FC<InputProps> = ({
   labelStyle,
   groupClassName,
   labelClassName,
+  disabled,
+  disabledColor = 'gray',
   ...props
 }) => {
   const [field, meta] = useField(props)
@@ -44,6 +48,8 @@ const Input: React.FC<InputProps> = ({
         {...field}
         {...props}
         placeholder={placeholder}
+        disabled={disabled}
+        style={disabled ? { backgroundColor: disabledColor } : {}}
         inputClassName={`border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent ${inputClassName} ${
           meta.touched && meta.error ? 'border-red-500' : null
         }`}
