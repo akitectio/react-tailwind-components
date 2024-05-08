@@ -28,10 +28,10 @@ jobs:
           npm run build-storybook
 
       - name: List build outputs
-        run: ls -l
+        run: ls -l ./storybook-static
 
       - name: Deploy 🚀
         uses: actions/deploy-pages@v1
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./storybook-static
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact_name: storybook-static
