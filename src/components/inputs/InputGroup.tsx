@@ -1,6 +1,5 @@
 import { useField } from 'formik'
 import React, { MouseEventHandler, ReactNode } from 'react'
-import '../../assets/css/login.module.css'
 import { BaseInput, BaseInputProps } from './BaseInput'
 
 interface InputGroupProps extends BaseInputProps {
