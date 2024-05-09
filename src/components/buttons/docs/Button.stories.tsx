@@ -40,5 +40,8 @@ Loading.args = {
   onClick: () => {
     alert('Button clicked!')
   },
-  loading: true
+  loading: true,
+  loadingColor: '#333',
+  loadingsize: 18,
+  loadingText: 'Loading...'
 }
