@@ -33,7 +33,7 @@ export const IconStart: InputStory = (args: InputGroupProps) => (
     <Form>
       <Field
         as={InputGroup}
-        name="email"
+        label="email"
         placeholder="Email"
         iconLeft={<FaEnvelope />}
         {...args}
@@ -53,7 +53,7 @@ export const IconEnd: InputStory = (args: InputGroupProps) => (
     <Form>
       <Field
         as={InputGroup}
-        name="email"
+        label="email"
         placeholder="Email"
         iconRight={<FaAccusoft />}
         {...args}
@@ -78,7 +78,7 @@ export const PasswordToggle: InputStory = (args: InputGroupProps) => {
       <Form>
         <Field
           as={InputGroup}
-          name="password"
+          label="password"
           placeholder="Password"
           type={showPassword ? 'text' : 'password'}
           iconRight={showPassword ? <FaEyeSlash onClick={() => setShowPassword(false)} /> : <FaEye onClick={() => setShowPassword(true)} />}
