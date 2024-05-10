@@ -1,8 +1,14 @@
-name: Build and Deploy
+name: Build and Deploy Storybook
+
 on:
   push:
     branches:
-      - main
+      - main # Replace with your default branch
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build-and-deploy:
@@ -18,8 +24,12 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
-          npm ci
+          npm install
           npm run build-storybook
+
+      - name: List build outputs
+        run: ls -l ./storybook-static
+
 
       - name: Deploy 🚀
         uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
