@@ -2,6 +2,7 @@
   "name": "@akitectio/react-tailwind-components",
   "version": "0.0.1",
   "description": "fast interface building for react",
+  "type": "module",
   "author": {
     "name": "DUY TRAN",
     "email": "akitect.io@gmail.com",
